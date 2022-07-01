@@ -40,3 +40,5 @@ const db = require('./queries');
 app.get("/mobilBekas", db.getMobilBekas);
 app.get("/penjual", db.getPenjual);
 app.get("/modelMobil", db.getModelMobil);
+app.put("/modelMobil", db.createModelMobil);
+app.delete("/modelMobil", db.deleteModel);
