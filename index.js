@@ -38,3 +38,5 @@ const ResponseClass = require("./model/response")
 const db = require('./queries');
 
 app.get("/mobilBekas", db.getMobilBekas);
+app.get("/penjual", db.getPenjual);
+app.get("/modelMobil", db.getModelMobil);

@@ -21,5 +21,26 @@ const getMobilBekas = (request, response) => {
         })
       }
 
+const getPenjual = (request, response) => {
+    var responseReturn = new ResponseClass();
+    pool.query('SELECT * FROM penjual ORDER BY idPenjual ASC', (error, results) => {
+        if (error) {
+            throw error
+          }
+          response.status(200).json(results.rows)
+        })
+      }
+
+const getModelMobil = (request, response) => {
+  var responseReturn = new ResponseClass();
+  pool.query('SELECT * FROM modelMobil ORDER BY idModel ASC', (error, results) => {
+      if (error) {
+          throw error
+        }
+        response.status(200).json(results.rows)
+      })
+    }
 module.exports = {
-    getMobilBekas}
+    getMobilBekas,
+    getPenjual,
+    getModelMobil}
