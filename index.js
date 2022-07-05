@@ -22,13 +22,9 @@ app.listen(process.env.PORT || 3000, function(){
 
 const { Pool } = require('pg');
 require('dotenv').config()
-
+const connectionString = process.env.DATABASE_URL
 const pool = new Pool({
-    user: 'mxzxtnrhvxfcpv',
-    host: process.env.DATABASE_URL,
-    database: 'diug4ik6i5fnp',
-    password: 'fe60cef12aa094db49406d52c257fea627cda5e3faecad2705a62aa1aa670572',
-    port: 5432,
+    connectionString,
     ssl: {
       rejectUnauthorized: false,
   }
